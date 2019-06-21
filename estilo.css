@@ -1,0 +1,271 @@
+*{
+    background-color:#3a3a3a;
+   color:#767474;
+   
+   
+}
+html,body{
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+h1{
+   color:#2b852d;
+   color:#08fd75;
+   font-size: 50px;
+}
+.nav_bar{
+  /*  background-color:#212121;*/
+    background-color:none;
+    position: relative;
+    float:left;
+    width : 5%;
+    height : 100%;
+    margin-top: none;
+}
+.nav_bar2{
+    background-color:none;
+    position: relative;
+    float:top;
+    width : 100%;
+    height : 30%;
+    margin-top: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navImg{
+  background-color:none;
+  position:relative;
+  float: top;
+  height: 10%;
+  width : 100%;
+  margin-left: 0%;
+  margin-top: 0%;
+  padding-top:0%;
+  margin-bottom:0%;
+}
+.navImg2{
+  background-color:none;
+  position:relative;
+  float: left;
+  height: 100%;
+  margin-left:0%;
+  /*width : 10%;*/
+
+}
+#logoL{
+    margin-left: 35%;
+}
+
+#logoMini{
+    padding-top:0%;
+    height: 10%;
+    width : 7%;
+    margin: 0;
+    margin: 0;
+    padding: 0;
+}
+nav{
+  margin-top:170%;
+}
+
+.leftSpace{
+    background-color: none;
+    position: relative;
+    float:left;
+
+    width: 30%;
+    margin-top:8%;
+    margin-left:3%;
+    margin-right:2%;
+    margin-bottom:2%;
+}
+.portSpace{
+    background-color: none;
+    position: relative;
+    float:left;
+
+    width: 90%;
+    margin-top:8%;
+    margin-left:3%;
+    margin-right:2%;
+    margin-bottom:0%;
+}
+.imgGrid{
+   margin-top:0%;
+   position:relative;
+    float: bottom;
+/*    display:block;
+    box-shadow:2px 2px 5px gray;
+    border:1px solid green;*/
+    width : 100%;
+}
+.imgCell{
+    position:relative;
+    float: left;
+/*    display:block;
+    box-shadow:2px 2px 5px gray;
+    border:1px solid yellow;*/
+    width: 45%;
+    margin-right:2%;
+    text-decoration:none;
+}
+.cellImg{
+/*  height: 10%;*/
+    position:relative;
+    float: top;
+    width : 100%;
+}
+.bartop{
+    height: 10%;
+    background-color: none;
+    margin-bottom: 0%;
+}
+.document{
+    position:relative;
+    float: bottom;
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    display: block;
+    /*box-shadow:2px 2px 5px gray;*/
+    border:1px solid gray;
+    margin-top:0%;
+    margin-left:10%;
+}
+.textDocument{
+    background-color: white;
+    position:relative;
+    float: left;
+    width:100%;
+   
+}
+.nombre_del_programa{
+    background-color: white;
+    margin-left:30%;
+}
+p.p{
+    background-color: white;
+    font-size: 30px;
+    margin-left:2%;
+    margin-right:2%;
+}
+p.p2{
+    color: #aaa;
+    font-size: 22px;
+    margin-left:2%;
+    margin-right:2%;
+}
+.medImg{
+    position:relative;
+    float: right;
+    width:50%;
+    margin-top:5%;
+}
+.med2Img{
+    position:relative;
+    float: bottom;
+    width:50%;
+    margin-top:0%;
+    margin-left:20%; 
+    border:1px solid gray;
+     
+}
+#sideImg{
+    margin-top:8%;
+    margin-left:3%;
+    margin-right:2%;
+    margin-bottom:2%;
+    position:relative;
+    float: right;
+}
+
+p.titulo{
+    position:relative;
+    float: top;
+    color: white;
+    font-size: 30px;
+   /* font-family: Courier New,Verdana,sans-serif;
+    font-style:italic;
+   */
+}
+p.descripcion{
+   position:relative;
+    float: bottom;
+    color: white;
+}
+p.leng{
+   position:relative;
+    float: bottom;
+    font-style:italic;
+}
+.rightSpace{
+    background-color: none;
+    position: relative;
+    float:left;
+    margin-top: 12%;
+    margin-left: 5%;
+    margin-right: 10%;
+    width:40%;
+   
+}
+.logoRight{
+    position:relative;
+    float: left;
+    width:100%;
+   
+}
+.about{
+    position: relative;
+    float:left;
+    width: 30%;
+    margin-top:8%;
+    margin-left:3%;
+    margin-right:2%;
+    margin-bottom:2%;
+}
+.photo{
+    position: relative;
+    float:left;
+    width: 18%;
+    margin-top:11%;
+    margin-left:3%;
+    margin-right:2%;
+    margin-bottom:2%;
+   
+}
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */  
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 0px;
+}
