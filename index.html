@@ -1,42 +1,127 @@
+
 <!DOCTYPE html>
 <html class="sr" lang="en" prefix="og: http://ogp.me/ns#" data-react-helmet="lang,prefix">
 <head>
     <title>Brian Chacon</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
 	<meta property="og:title" content="Brian Chacon" />
 	<meta property="og:type" content="website" />
 <!-- 	<meta property="og:image" content="https://frontendlabs.io/frontend-labs-facebook.png" />
 	<meta property="og:url" content="https://frontendlabs.io/" /> -->
 	<link rel="shortcut icon" href="Files/icon.png">
-	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!--script src="script.js"></script -->
 </head>
-<body>
+<body >
+ 
+  <div class="general">  
     <div class="nav_bar">
         <a class="logo" rel="home" href="home.html" >
-             <img src="Files/CHlogo.png" alt="Brian Chacon Java Developer Logo" class="navImg"> 
+             <img src="Files/CHlogo.png" alt="Brian Chacon Java Developer Logo" class="navImg" id="logo"> 
         </a>
         <nav class="nav">
-            <a rel="home" href="home.html" > 
-                <img src="Files/Home1.png" alt="Home Icon" id="homeI" class="navImg"> 
+            
+            <a rel="home" href="#home" class="navBot" > 
+                <img src="Files/Home2.png" alt="Home Icon" id="homeI" class="navImg"> 
             </a> 
-            <a rel="about" href="about.html" > 
+            <a rel="about" href="#about" class="navBot" > 
                 <img src="Files/Persona2.png" alt="About Icon" class="navImg">
             </a>
-            <a rel="portfolio" href="portfolio.html"> 
+            <a rel="portfolio" href="#portfolio" class="navBot"> 
                 <img src="Files/Maletin2.png" alt="Portfolio Icon" class="navImg">
             </a> 
-            <a rel="contact" href="contact.html" > 
+            <a rel="contact" href="#contact" class="navBot" > 
                 <img src="Files/Sobre2.png" alt="Contact Icon" class="navImg">
             </a>
         </nav> 
     </div> 
-    <div class="leftSpace" >
-        <h1>Hi,</h1>
-        <h1>I'm Brian Chacón,</h1>
-        <h1> JAVA DEVELOPER.</h1>
-        Java developer  / Web functionality
-    </div> 
-    <div class="rightSpace">
-        <img src="Files/logo1.png" alt="Brian Chacon Java Developer Logo" class="logoRight" > 
-    </div>       
+    <div class="pageContainer" id="home"> 
+        <div class="leftSpace" >
+            <h1>Hi</h1>
+            <h1>I'm Brian Chacón,</h1>
+            <h1> JAVA DEVELOPER.</h1>
+            Java developer  / Web functionality
+        </div> 
+        <div class="rightSpace">
+            <img src="Files/logo1.png" alt="Brian Chacon Java Developer Logo" class="logoRight" > 
+        </div>
+    </div>
+    <div class="pageContainer" id="about">
+        <div class="leftSpace" >  
+            <div class="about" >
+                <h1>About me</h1>
+                <p class ="p2">I like building cool stuffs. I build desktop programs, funtionality for webs and full webs.</p>
+                <p class ="p2">I work mainly with Java/C++ for Windows o Linux and JS for webs. This is a list of the technologies I've worked:</p>
+                <p class ="p2">Java C/C++  Haskell Python </p>
+                <p class ="p2">JS HTML/CSS React MySql</p>
+                <p class ="p2"> GIT & bitbucket SCRUM </p>
+                <p class ="p2"> Also I write courses and articles of technology.</p>
+                <p class ="p2">Need build something ? Send me a email or find me on social media.</p>
+            </div>
+        </div>
+        <div class="rightSpace">
+            <div class="borderPhoto" >
+                <img src="Files/photoBN.png" alt="Contact Image" class="photo">
+            </div>
+        </div>
+    </div>
+    <div class="pageContainer" id="portfolio">
+        <div class="portSpace" >
+            <h1>Portfolio</h1>
+            <div class="imgGrid">
+                <!--div class="labelLenguage"><p>JAVA</p></div-->
+                <a href="work1.html" class="imgCell">
+                    <p class="titulo"> Scrum </p>
+                    <img src="Files/work1.png" alt="Portfolio proyect image" class="cellImg">
+                    <p class="descripcion" >A virtual SCRUM, with a chart to show the progress. </p>
+                    <p class="leng">Java, Swing .</p>
+                </a>
+                <a href="work1.html" class="imgCell">
+                    <p class="titulo"> Text editor </p>
+                    <img src="Files/work2.png" alt="Portfolio proyect image" class="cellImg">
+                    <p class="descripcion" >Simple text editor with two skins and the posibility to export to PDF. </p>
+                    <p class="leng">Java, Swing .</p>
+                </a>
+                <a href="work1.html" class="imgCell">
+                    <p class="titulo"> TODO list </p>
+                    <img src="Files/work3.png" alt="Portfolio proyect image" class="cellImg">
+                    <p class="descripcion" >A simple, agile and fast TODO list. </p>
+                    <p class="leng">Java, Swing .</p>
+                </a>
+                
+            <!--/div>
+
+            <div class="imgGrid"-->
+                <!--div class="labelLenguage"><p>JavaScript</p></div-->
+                <a href="work1.html" class="imgCell">
+                    <p class="titulo"> Inventary </p>
+                    <img src="Files/work4.png" alt="Portfolio proyect image" class="cellImg">
+                    <p class="descripcion" >A inventary web application developed in React. </p>
+                    <p class="leng">JS, JSX, React .</p>
+                </a>
+                <a href="work1.html" class="imgCell">
+                    <p class="titulo"> Text with space to CSS format </p>
+                    <img src="Files/work5.png" alt="Portfolio proyect image" class="cellImg">
+                    <p class="descripcion" >Transform a text with diferent number of spaces to diferents class and styled in CSS</p>
+                    <p class="leng">JS .</p>
+                </a>
+            </div>
+            
+        </div> 
+      
+    </div>
+    <div class="pageContainer" id="contact"> 
+        
+        <div class="mailContainer">
+            <h1>Contacto</h1>
+            <p class ="p2"> Need to build something, want to work together or just to say hi, send me a e-mail pushing the button  below</p>               
+            <div class="mailButton">
+                <a href="mailto:brian89.chacon89@gmail.com?Subject=Mail%20De%20Mi%20Web%20FEEDBACK" class="mailLink">WRITE ME</a>
+            </div>               
+        </div>            
+             
+    </div>
+  </div>              
 </body>
 </html>
