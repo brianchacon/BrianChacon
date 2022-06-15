@@ -93,7 +93,7 @@ function interpolation(proyect){
   let count = 0;
   imgUrls.forEach( url =>{
     count++;
-    buttons += '<button class="portfolio-item-card-list-option" onclick="setImage('+id+','+url+')" id="btnItem'+id+'_'+count+'">'+count+'</button>';
+    buttons += '<button class="portfolio-item-card-list-option" onclick="setImage('+id+',"'+url+'")" id="btnItem'+id+'_'+count+'">'+count+'</button>';
   });
   const imgDefault = imgUrls.length >0 ?  imgUrls[0] : '';
   
