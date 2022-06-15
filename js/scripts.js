@@ -1,5 +1,5 @@
-
-window.onscroll = function() {
+const jsonData= require('../Files/proyects.json');
+/* window.onscroll = function() {
 
   var home      = document.getElementById('home');
   var about     = document.getElementById('about');
@@ -31,11 +31,11 @@ window.onscroll = function() {
   //agregamos a quien debe tener la clase necesitamos agregar
   editElementClass(selected,"navBotActive",null);
   editElementClass(selected+"Mobile","navBotActive",null);
-};
+}; */
 
 
 //Agregar y/o quitar clases a un elemento by id
-function editElementClass(id,addClass,deleteClass){
+/* function editElementClass(id,addClass,deleteClass){
 
   var elem = document.getElementById(id);
 
@@ -43,10 +43,10 @@ function editElementClass(id,addClass,deleteClass){
     elem.classList.remove(deleteClass);
   if(addClass !=  null) 
     elem.classList.add(addClass);
-}
+} */
 
 //Agregar y/o quitar clases a un conjunto de elementos by class
-function editElementsByClass(className,addClass,deleteClass){
+/* function editElementsByClass(className,addClass,deleteClass){
 
   var elems = document.getElementsByClassName(className);
 
@@ -57,4 +57,11 @@ function editElementsByClass(className,addClass,deleteClass){
     if(addClass !=  null) 
       elems[i].classList.add(addClass);
   }
+} */
+
+var proyectList = [];
+
+function loadProyects(){
+  
+  console.log(jsonData);
 }

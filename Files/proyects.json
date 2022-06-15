@@ -1,0 +1,64 @@
+[{
+"id":1,
+"name":"Wonder APP",
+"company":"Wonder",
+"techs":"PHP, Jquery, Bootstrap, MySql",
+"description":"Sistema de gestión y registro de venta, impresión de comanda dinámica.",
+"link":"http://wonderhamburgueseria.com.ar/nuevacordoba/pedidos/",
+"dateData":"Creado y mantenido desde 2020-08-05",
+"imgUrls":["",""]
+},{
+"id":2,
+"name":"Wonder Insumos",
+"company":"Wonder",
+"techs":"Angular, PHP, MySql",
+"description":"Sistema de control de mercadería, para Wonder App",
+"link":"http://wonderhamburgueseria.com.ar/develop/insumos/#/home",
+"dateData":"Creado y mantenido desde 2021-8",
+"imgUrls":["",""]
+},{
+"id":3,
+"name":"Ideas Chacon ",
+"company":"Ideas Chacon ",
+"techs":"Angular, PHP, MySql",
+"description":"Web de empresa.",
+"link":"ideaschacon.com",
+"dateData":"2020-12-21",
+"imgUrls":["",""]
+},{
+"id":4,
+"name":"Smart-republic",
+"company":"Smart-republic",
+"techs":"Angular, PHP, MySql",
+"description":"Sistema de gestión y registro de venta.",
+"link":"http://smart-republic.site/",
+"dateData":"Creado y mantenido desde 2021-10-14",
+"imgUrls":["",""]
+},{
+"id":5,
+"name":"Planet Defense Game",
+"company":"Planet Defense Game",
+"techs":"Angular, PHP, MySql, Solidity",
+"description":"Web y market para juego crypto.",
+"link":"planetdefense.space",
+"dateData":"2021-08-28",
+"imgUrls":["",""]
+},{
+"id":6,
+"name":"Paseo de compras",
+"company":"Paseo de compras",
+"techs":"Angular, PHP, MySql",
+"description":"Tienda online.",
+"link":"http://paseodecompracoloniabaron.link/",
+"dateData":"2022-04-12",
+"imgUrls":["",""]
+},{
+"id":7,
+"name":"Hiper Kiosko",
+"company":"Hiper Kiosko",
+"techs":"Angular, PHP, MySql",
+"description":"Sistema de gestión y registro de venta.",
+"link":"http://hiper-kiosco.xyz/",
+"dateData":"2022-05-05",
+"imgUrls":["",""]
+}]
