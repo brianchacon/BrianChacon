@@ -153,3 +153,39 @@ function setImage(id,src,count,length){
   }
   document.getElementById('btnItem'+id+'_'+count).classList = ['portfolio-item-card-list-option active'];
 }
+
+function selectMenuOption(id,className){
+  //Obtenemos elementos activos y les quitamos la propiedad de activo
+  let selectedList = document.getElementsByClassName('btn-menu-active');
+  for(let i= 0; i< selectedList.length;i++){
+    const elem = selectedList[i];
+    
+    var list2 = [];
+    
+    for(let j= 0; j< document.getElementById(elem.id).classList.length;j++){
+      const c = document.getElementById(elem.id).classList[j];
+    
+      if(c == 'btn-menu-active'){
+        list2[j] = 'btn-menu';
+      } else {
+        list2[j] = c ;
+      }
+    }
+    
+    document.getElementById(elem.id).classList = list2.join(' ');
+  }
+
+  //Marcamos nuevo elemento activo
+  var list = [];
+  
+  for(let i= 0; i< document.getElementById(id).classList.length;i++){
+    const c = document.getElementById(id).classList[i];
+    if(c == 'btn-menu'){
+      list[i] = 'btn-menu-active';
+    } else {
+      list[i] = c;
+    }
+  }
+  
+  document.getElementById(id).classList = list.join(' ');
+}
