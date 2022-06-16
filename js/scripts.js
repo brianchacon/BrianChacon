@@ -71,7 +71,6 @@ function loadProyects(){
      return response.json();
   })
   .then(jsondata => {
-    console.log(jsondata);
     proyectList = jsondata;
     proyectList.forEach(proyect => {
       interpolation(proyect)
@@ -93,7 +92,7 @@ function interpolation(proyect){
   let count = 0;
   imgUrls.forEach( url =>{
     count++;
-    buttons += '<button class="portfolio-item-card-list-option" onclick="setImage('+id+',"'+url+'")" id="btnItem'+id+'_'+count+'">'+count+'</button>';
+    buttons += '<button class="portfolio-item-card-list-option" onclick="setImage('+id+',\''+url+'\','+count+','+imgUrls.length+')" id="btnItem'+id+'_'+count+'">'+count+'</button>';
   });
   const imgDefault = imgUrls.length >0 ?  imgUrls[0] : '';
   
@@ -140,12 +139,17 @@ function interpolation(proyect){
     '</div>';
 
   document.getElementById('portfolio').innerHTML = document.getElementById('portfolio').innerHTML + newItemStr;
+
+  document.getElementById('btnItem'+id+'_1').classList = ['portfolio-item-card-list-option active'];
 }
 
 
-function setImage(id,src){
+function setImage(id,src,count,length){
   document.getElementById('imgPreview'+id).src = src;
-  //Colorear opcion elegida
-  //document.getElementById('btnItem'+id+'_'+count).classList
-  
+
+  for(let i = 1; i<length+1; i++){
+
+    document.getElementById('btnItem'+id+'_'+i).classList = ['portfolio-item-card-list-option'];
+  }
+  document.getElementById('btnItem'+id+'_'+count).classList = ['portfolio-item-card-list-option active'];
 }
