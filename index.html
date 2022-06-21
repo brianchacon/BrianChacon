@@ -20,7 +20,7 @@
 	<!--  <script src="jquery.min.js"></script><link href="css/button.css" rel="stylesheet">
     script src="script.js"></script -->
 </head>
-<body onload="loadProyects()">
+<body onload="loadProyects()" onscroll="detectEdges()">
 
     <div class="menu-bar">
         <div class="row">
@@ -35,7 +35,7 @@
             <div class="col-12 col-md-2 btn-menu" id="contactMenuBarLink">
                 <a href="#contact" onclick="selectMenuOption('contactMenuBarLink','btn-menu')">Contact</a>
             </div>
-            <div class="col-12 col-md-2 btn-menu"></div>
+            <div class="col-12 col-md-2 btn-menu"><span id="seeData" style="color: #108b45;"></span></div>
             <div class="col-12 col-md-2 btn-menu"></div>
         </div>
     </div>

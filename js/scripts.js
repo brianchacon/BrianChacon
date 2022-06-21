@@ -1,64 +1,7 @@
 //const jsonData= require('../Files/proyects.json');
 
-/* window.onscroll = function() {
 
-  var home      = document.getElementById('home');
-  var about     = document.getElementById('about');
-  var portfolio = document.getElementById('portfolio');
-  var contact   = document.getElementById('contact');
-
-  var posicionhome       = home.getBoundingClientRect();
-  var posicionabout      = about.getBoundingClientRect();
-  var posicionportfolio  = portfolio.getBoundingClientRect();
-  var posicioncontact    = contact.getBoundingClientRect();
-
-  //Limpiamos los colores
-  editElementsByClass("navImg",null,"navBotActive");
-
-  let selected = "navBotHome";
-
-  if(posicioncontact.y<98)
-     selected = "navBotContact";   
-  
-  else if(posicionportfolio.y<98)
-      selected = "navBotPortfolio";
-  
-  else if(posicionabout.y<98)
-     selected = "navBotAbout";
-  
-  else if(posicionhome.y<98)
-      selected = "navBotHome";
- 
-  //agregamos a quien debe tener la clase necesitamos agregar
-  editElementClass(selected,"navBotActive",null);
-  editElementClass(selected+"Mobile","navBotActive",null);
-}; */
-
-
-//Agregar y/o quitar clases a un elemento by id
-/* function editElementClass(id,addClass,deleteClass){
-
-  var elem = document.getElementById(id);
-
-  if(deleteClass !=  null)
-    elem.classList.remove(deleteClass);
-  if(addClass !=  null) 
-    elem.classList.add(addClass);
-} */
-
-//Agregar y/o quitar clases a un conjunto de elementos by class
-/* function editElementsByClass(className,addClass,deleteClass){
-
-  var elems = document.getElementsByClassName(className);
-
-  for (var i = 0; i<elems.length; i++) {
-
-    if(deleteClass !=  null)
-      elems[i].classList.remove(deleteClass);
-    if(addClass !=  null) 
-      elems[i].classList.add(addClass);
-  }
-} */
+menuIdSelected = 'homeMenuBarLink';
 
 var proyectList = [];
 
@@ -107,7 +50,7 @@ function interpolation(proyect){
     '              <div class="col-7">'+
     '                  <span class="portfolio-item-card-preview">'+
     '                      <span class="portfolio-item-card-img-container">'+
-    '                          <img src="'+imgDefault+'" alt="" class="" loading="lazy" id="imgPreview'+id+'">'+
+    '                          <img src="'+imgDefault+'" alt="" class=""  id="imgPreview'+id+'">'+
     '                      </span>'+
     '                      <span class="portfolio-item-card-img-selector">'+
     '                          <span class="portfolio-item-card-list">'+
@@ -155,6 +98,7 @@ function setImage(id,src,count,length){
 }
 
 function selectMenuOption(id,className){
+  menuIdSelected = id;
   //Obtenemos elementos activos y les quitamos la propiedad de activo
   let selectedList = document.getElementsByClassName('btn-menu-active');
   for(let i= 0; i< selectedList.length;i++){
@@ -188,4 +132,25 @@ function selectMenuOption(id,className){
   }
   
   document.getElementById(id).classList = list.join(' ');
+}
+
+function detectEdges(){
+  menuIdSelected = 'homeMenuBarLink';
+  let elemId = '';
+  
+  let elems = ['home','about','portfolio','contact'];
+  let acumulador = 0;
+  let ends = false;
+  elems.forEach( elemName =>{
+    acumulador += document.getElementById(elemName).getBoundingClientRect().height;
+    if( scrollY <= acumulador && !ends){
+      elemId = elemName;
+      ends = true;
+    }
+  });
+  
+ // document.getElementById('seeData').innerHTML = 'scroll:'+scrollY+'| name:'+elemId;
+
+
+  selectMenuOption(elemId+'MenuBarLink','btn-menu');
 }
