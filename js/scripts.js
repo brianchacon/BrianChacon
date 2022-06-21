@@ -47,7 +47,7 @@ function interpolation(proyect){
     '              <div class="col-12" style="text-align: center;margin-bottom: 35px;">'+
     '                  <span class="text-span-colored-blue" style="font-size: 50px;">'+name+'</span>'+
     '              </div>'+
-    '              <div class="col-7">'+
+    '              <div class="col-12 col-md-7">'+
     '                  <span class="portfolio-item-card-preview">'+
     '                      <span class="portfolio-item-card-img-container">'+
     '                          <img src="'+imgDefault+'" alt="" class=""  id="imgPreview'+id+'">'+
@@ -60,7 +60,7 @@ function interpolation(proyect){
     '                  </span>'+
     ''+
     '              </div>'+
-    '              <div class="col-5" style="border-left: 2px solid #e5e5e5;">'+
+    '              <div class="col-12 col-md-5" style="border-left: 2px solid #e5e5e5;">'+
     '                  <h3>'+company+'</h3>'+
     '                  <span style="min-height: 16vh;">'+
     '                      <p class="portfolio-item-card-p-link">'+

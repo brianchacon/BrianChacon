@@ -7,7 +7,7 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
 	<meta property="og:title" content="Brian Chacon" />
-	<meta property="og:type" content="website" />
+	<meta property="og:type" content="website portfolio" />
 <!-- 	<meta property="og:image" content="https://frontendlabs.io/frontend-labs-facebook.png" />
 	<meta property="og:url" content="https://frontendlabs.io/" /> -->
 	<link rel="shortcut icon" href="Files/icon.png">
@@ -17,33 +17,37 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
   
     <script src="js/scripts.js"></script>
-	<!--  <script src="jquery.min.js"></script><link href="css/button.css" rel="stylesheet">
-    script src="script.js"></script -->
+
 </head>
 <body onload="loadProyects()" onscroll="detectEdges()">
 
     <div class="menu-bar">
         <div class="row">
-            <div class="col-12 col-md-2 btn-menu-active" id="homeMenuBarLink">
+            <div class="col-6 col-md-2 btn-menu-active" id="homeMenuBarLink">
                 <a href="#home" onclick="selectMenuOption('homeMenuBarLink','btn-menu')">Home</a> </div>
-            <div class="col-12 col-md-2 btn-menu" id="aboutMenuBarLink">
+            <div class="col-6 col-md-2 btn-menu" id="aboutMenuBarLink">
                 <a href="#about" onclick="selectMenuOption('aboutMenuBarLink','btn-menu')">About</a>
             </div>
-            <div class="col-12 col-md-2 btn-menu" id="portfolioMenuBarLink">
+            <div class="col-6 col-md-2 btn-menu" id="portfolioMenuBarLink">
                 <a href="#portfolio" onclick="selectMenuOption('portfolioMenuBarLink','btn-menu')">PortFolio</a>
             </div>
-            <div class="col-12 col-md-2 btn-menu" id="contactMenuBarLink">
+            <div class="col-6 col-md-2 btn-menu" id="contactMenuBarLink">
                 <a href="#contact" onclick="selectMenuOption('contactMenuBarLink','btn-menu')">Contact</a>
             </div>
-            <div class="col-12 col-md-2 btn-menu"><span id="seeData" style="color: #108b45;"></span></div>
+            <div class="col-6 col-md-2 btn-menu"><span id="seeData" style="color: #108b45;"></span></div>
             <div class="col-12 col-md-2 btn-menu"></div>
         </div>
     </div>
   <div class="container" >
     <!-- Para landing -->
     <div class="row">
-        
-        <div class="col-7 pageContainer" id="home"> 
+        <div class="col-12 col-md-5" id="photoMobile">
+            <div class="rightSpace">
+
+                <img src="Files/logo1.png" alt="Brian Chacon Java Developer Logo" class="logoRight" style="opacity: 89%;width: 100vw;margin-left: -6%;filter: drop-shadow( 0px 32px 16px #095219e6);"> 
+            </div>
+        </div>
+        <div class="col-12 col-md-7 pageContainer" id="home"> 
             <div class="leftSpace" >
                 <h1 style="color: #3d31f7;">Hi, I'm </h1>
                 <h1 >
@@ -57,7 +61,7 @@
 
 
         </div>
-        <div class="col-5">
+        <div class="col-12 col-md-5" id="photoReg">
             <div class="rightSpace">
 
                 <img src="Files/logo1.png" alt="Brian Chacon Java Developer Logo" class="logoRight" style="opacity: 89%;  max-width: 500px;"> 

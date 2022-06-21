@@ -285,54 +285,33 @@ input[type=submit]:hover {
      transform: translateX(3px);
   }
 
+  #photoMobile{
+    display: none;
+  }
+
 /* Para moviles*/
 @media (max-width: 768px) {
 
- 
-  #filterColor{
-    width: 80%;
+  body{
+    width: 100vw;
   }
-  .mailContainer{
-    width: auto;
-    margin-left: 0%;
-    margin-right: 0%;
-  }
-
-  .mailButton {
-    width: auto;
-    min-width: 30%;
-
-    max-width: initial;
-  }
-  .about{
-    padding-left: 0%;
-  }
-  .nav_bar_mobile{
-    display: block;
-    z-index: 200;
-  }
-  .nav_bar{
+  #photoReg{
     display: none;
   }
-  .nav {
-    margin-top: 0;
+  #photoMobile{
+    display: flex;
+ 
   }
 
 
-
-
-  .navImg {
-    width: 15%;
-    margin-left: 4%;
-    border: 2px solid #577d687a;
-    border-radius: 0px 0px 5px 5px;
-    border-top: none;
-    padding-top: 3%;
+  .portfolio-item-card-img-container img{
+    max-width: 80vw;
   }
+ 
   #home{
-    margin-top: 25%;
+    /* margin-top: 25%; */
     min-height: 600px;
-    padding-top: 100px;
+    padding-top: 34px;
   }
   #about{
     padding-top: 60px;
@@ -343,7 +322,6 @@ input[type=submit]:hover {
    
   #contact{
     padding-top: 50px;
-    left: 3%;
   }
   .photo{
     transform: translateX(10px);
