@@ -22,7 +22,7 @@
 <body onload="loadProyects()" onscroll="detectEdges()">
 
     <div class="menu-bar">
-        <div class="row">
+        <div class="row" style="padding-top: 5px;">
             <div class="col-6 col-md-2 btn-menu-active" id="homeMenuBarLink">
                 <a href="#home" onclick="selectMenuOption('homeMenuBarLink','btn-menu')">Home</a> </div>
             <div class="col-6 col-md-2 btn-menu" id="aboutMenuBarLink">
@@ -38,6 +38,11 @@
             <div class="col-12 col-md-2 btn-menu"></div>
         </div>
     </div>
+  <div class="modal-image-view" onclick="showFullImage(false,0);" id="modal-image-view-id">
+    <div class="img-container">    
+       <img src=""  class="modal-img" style="" id="modal-image-full">
+    </div>
+  </div>
   <div class="container" >
     <!-- Para landing -->
     <div class="row">
@@ -108,6 +113,10 @@
     <div class="row" id="portfolio">
         <span class="text-span-colored-green-1" style="font-size: 50px">Portfolio</span>
     </div>
+    <div class="row" id="portfolio-spinner">
+        <div  class="spinner" style="margin: auto;"></div>
+    </div>
+
 
 
     <!-- Para Contact -->

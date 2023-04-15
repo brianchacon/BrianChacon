@@ -18,8 +18,22 @@ function loadProyects(){
     proyectList.forEach(proyect => {
       interpolation(proyect)
     });
+    document.getElementById('portfolio-spinner').innerHTML ="";
   });
+  showFullImage(false,0);
+}
+
+function getMinUrl(url,text){
+  let parts = url.split(".");
+  let response = "";
+
   
+  response = parts[parts.length-2]+text+'.'+parts[parts.length-1] ;
+  for(let i = parts.length-3 ; i>=0; i--){
+      response = parts[i]+'.'+response;
+  }
+
+  return response;
 }
 
 function interpolation(proyect){
@@ -30,14 +44,17 @@ function interpolation(proyect){
   const description = proyect.description;
   const dateData = proyect.dateData;
   const imgUrls = proyect.imgUrls;
-  const link = proyect.link;
+  const link = proyect.link == '#nogo'?'':proyect.link;
   let buttons = "";
   let count = 0;
   imgUrls.forEach( url =>{
+    let shortUrl = getMinUrl(url,'_min');
+    let fullUrl = url;
     count++;
-    buttons += '<button class="portfolio-item-card-list-option" onclick="setImage('+id+',\''+url+'\','+count+','+imgUrls.length+')" id="btnItem'+id+'_'+count+'">'+count+'</button>';
+    buttons += '<button class="portfolio-item-card-list-option" onclick="setImage('+id+',\''+shortUrl+'\',\''+fullUrl+'\','+count+','+imgUrls.length+')" id="btnItem'+id+'_'+count+'">'+count+'</button>';
   });
-  const imgDefault = imgUrls.length >0 ?  imgUrls[0] : '';
+  const imgMin = imgUrls.length >0 ?  getMinUrl(imgUrls[0],'_min') : '';
+  const fullUrl = imgUrls.length >0 ?  imgUrls[0] : '';
   
   const newItemStr = 
     ' <div class="col-12 col-md-12 pageContainer" >'+
@@ -49,8 +66,9 @@ function interpolation(proyect){
     '              </div>'+
     '              <div class="col-12 col-md-7">'+
     '                  <span class="portfolio-item-card-preview">'+
-    '                      <span class="portfolio-item-card-img-container">'+
-    '                          <img src="'+imgDefault+'" alt="" class=""  id="imgPreview'+id+'">'+
+    '                      <span class="portfolio-item-card-img-container" onclick="showFullImage(true,'+id+');">'+
+    '                          <img src="'+imgMin+'" alt="" class="imgPreviewClass"  id="imgPreview'+id+'">'+
+    '                          <input value="'+fullUrl+'" type="hidden" id="imgInput'+id+'">'+
     '                      </span>'+
     '                      <span class="portfolio-item-card-img-selector">'+
     '                          <span class="portfolio-item-card-list">'+
@@ -86,9 +104,17 @@ function interpolation(proyect){
   document.getElementById('btnItem'+id+'_1').classList = ['portfolio-item-card-list-option active'];
 }
 
+function showFullImage(show,id){
+  if(id != 0)
+    document.getElementById('modal-image-full').src = document.getElementById('imgInput'+id).value;
+  
+  document.getElementById('modal-image-view-id').style = show ? 'display: inherit': 'display: none';
+}
 
-function setImage(id,src,count,length){
+
+function setImage(id,src,fullUrl,count,length){
   document.getElementById('imgPreview'+id).src = src;
+  document.getElementById('imgInput'+id).value = fullUrl;
 
   for(let i = 1; i<length+1; i++){
 
