@@ -1,41 +1,4 @@
 //const jsonData= require('../Files/proyects.json');
-<<<<<<< HEAD
-
-/* window.onscroll = function() {
-
-  var home      = document.getElementById('home');
-  var about     = document.getElementById('about');
-  var portfolio = document.getElementById('portfolio');
-  var contact   = document.getElementById('contact');
-
-  var posicionhome       = home.getBoundingClientRect();
-  var posicionabout      = about.getBoundingClientRect();
-  var posicionportfolio  = portfolio.getBoundingClientRect();
-  var posicioncontact    = contact.getBoundingClientRect();
-
-  //Limpiamos los colores
-  editElementsByClass("navImg",null,"navBotActive");
-
-  let selected = "navBotHome";
-
-  if(posicioncontact.y<98)
-     selected = "navBotContact";   
-  
-  else if(posicionportfolio.y<98)
-      selected = "navBotPortfolio";
-  
-  else if(posicionabout.y<98)
-     selected = "navBotAbout";
-  
-  else if(posicionhome.y<98)
-      selected = "navBotHome";
- 
-  //agregamos a quien debe tener la clase necesitamos agregar
-  editElementClass(selected,"navBotActive",null);
-  editElementClass(selected+"Mobile","navBotActive",null);
-}; */
-=======
->>>>>>> 220975ff12128cff21ca6b5bff4d4de394369437
 
 
 menuIdSelected = 'homeMenuBarLink';
@@ -43,16 +6,6 @@ menuIdSelected = 'homeMenuBarLink';
 var proyectList = [];
 
 function loadProyects(){
-<<<<<<< HEAD
-  //const jsonData= require('https://ideaschacon.com/ich/proyects.json');
-
-  fetch("https://ideaschacon.com/ich/proyects.json")
-  .then(response => {
-     return response.json();
-  })
-  .then(jsondata => console.log(jsondata));
-  //console.log(jsonData);
-=======
   
   const dire = 'https://ideaschacon.com/ich/proyects/getAll.php';
   
@@ -226,5 +179,4 @@ function detectEdges(){
 
 
   selectMenuOption(elemId+'MenuBarLink','btn-menu');
->>>>>>> 220975ff12128cff21ca6b5bff4d4de394369437
 }
