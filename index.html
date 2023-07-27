@@ -7,7 +7,7 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
 	<meta property="og:title" content="Brian Chacon" />
-	<meta property="og:type" content="website" />
+	<meta property="og:type" content="website portfolio" />
 <!-- 	<meta property="og:image" content="https://frontendlabs.io/frontend-labs-facebook.png" />
 	<meta property="og:url" content="https://frontendlabs.io/" /> -->
 	<link rel="shortcut icon" href="Files/icon.png">
@@ -17,15 +17,42 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
   
     <script src="js/scripts.js"></script>
-	<!--  <script src="jquery.min.js"></script><link href="css/button.css" rel="stylesheet">
-    script src="script.js"></script -->
+
 </head>
-<body onload="loadProyects()">
-  <div class="container">
+<body onload="loadProyects()" onscroll="detectEdges()">
+
+    <div class="menu-bar">
+        <div class="row" style="padding-top: 5px;">
+            <div class="col-6 col-md-2 btn-menu-active" id="homeMenuBarLink">
+                <a href="#home" onclick="selectMenuOption('homeMenuBarLink','btn-menu')">Home</a> </div>
+            <div class="col-6 col-md-2 btn-menu" id="aboutMenuBarLink">
+                <a href="#about" onclick="selectMenuOption('aboutMenuBarLink','btn-menu')">About</a>
+            </div>
+            <div class="col-6 col-md-2 btn-menu" id="portfolioMenuBarLink">
+                <a href="#portfolio" onclick="selectMenuOption('portfolioMenuBarLink','btn-menu')">PortFolio</a>
+            </div>
+            <div class="col-6 col-md-2 btn-menu" id="contactMenuBarLink">
+                <a href="#contact" onclick="selectMenuOption('contactMenuBarLink','btn-menu')">Contact</a>
+            </div>
+            <div class="col-6 col-md-2 btn-menu"><span id="seeData" style="color: #108b45;"></span></div>
+            <div class="col-12 col-md-2 btn-menu"></div>
+        </div>
+    </div>
+  <div class="modal-image-view" onclick="showFullImage(false,0);" id="modal-image-view-id">
+    <div class="img-container">    
+       <img src=""  class="modal-img" style="" id="modal-image-full">
+    </div>
+  </div>
+  <div class="container" >
     <!-- Para landing -->
     <div class="row">
-        
-        <div class="col-7 pageContainer" id="home"> 
+        <div class="col-12 col-md-5" id="photoMobile">
+            <div class="rightSpace">
+
+                <img src="Files/logo1.png" alt="Brian Chacon Java Developer Logo" class="logoRight" style="opacity: 89%;width: 100vw;margin-left: -6%;filter: drop-shadow( 0px 32px 16px #095219e6);"> 
+            </div>
+        </div>
+        <div class="col-12 col-md-7 pageContainer" id="home"> 
             <div class="leftSpace" >
                 <h1 style="color: #3d31f7;">Hi, I'm </h1>
                 <h1 >
@@ -34,15 +61,24 @@
                 <h1>
                     <span class="text-span-colored-green-2"> a WEB DEVELOPER.</span>
                 </h1>
-                <b>Front / Back end developer.</b>
+                <b>Fullstack developer.</b>
             </div>
 
 
         </div>
-        <div class="col-5">
+        <div class="col-12 col-md-5" id="photoReg">
             <div class="rightSpace">
+                <div class="brackets-img" style="font-size: 18em;
+    font-family: monospace;
+    color: #48465d;
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(58%, #3d31f7), to(#10dd3c));
+    background-image: linear-gradient(76deg, #3d31f7 -20%, #10dd3c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;">
+                    {}
+                </div>
 
-                <img src="Files/logo1.png" alt="Brian Chacon Java Developer Logo" class="logoRight" style="opacity: 89%;  max-width: 500px;"> 
             </div>
         </div>
     </div>
@@ -54,7 +90,7 @@
             <div class="leftSpace" >
                 <div class="about" > 
                     <span class="text-span-colored-green-1" style="font-size: 50px">About me</span>
-                    <p class ="p2">I love creating technological solutions, that live in the  web, on your desktop or on your mobile. </p>
+                    <p class ="p2">I love creating technological solutions, that live on the  web. </p>
                     <p class ="p2"></p>
     
                     <p class ="p2">I work mainly with Java and PHP for the backend and Angular for a full development or just JS/jQuery for web funcionalities.</p>
@@ -83,53 +119,17 @@
     </div>
 
     <!-- Para la lista de proyectos -->
-    <div class="row">
-        <div class="col-12 col-md-12 pageContainer" id="portfolio">
-            <div class="portfolio-item-card-shadow">
-                <div class="card portfolio-item-card">
-                    <div class="row">
-                        <div class="col-12" style="text-align: center;margin-bottom: 35px;">
-                            <span class="text-span-colored-blue" style="font-size: 50px;">WONDER</span>
-                        </div>
-                        <div class="col-7">
-                            <span class="portfolio-item-card-preview">
-                                <span class="portfolio-item-card-img-container">
-                                    <img src="Files/wonder-1.png" alt="" class="" loading="lazy" >
-                                </span>
-                                <span class="portfolio-item-card-img-selector">
-                                    <span class="portfolio-item-card-list">
-                                        <button class="portfolio-item-card-list-option">1</button>
-                                        <button class="portfolio-item-card-list-option">2</button>
-                                        <button class="portfolio-item-card-list-option active">3</button>
-                                        <button class="portfolio-item-card-list-option">4</button>
-                                    </span>
-                                </span>
-                            </span>
-
-                        </div>
-                        <div class="col-5" style="border-left: 2px solid #e5e5e5;">
-                            <h3>Wonder</h3>
-                            <span style="min-height: 16vh;">
-                                <p class="portfolio-item-card-p-link">
-                                    <a class="" href="http://wonderhamburgueseria.com.ar/nuevacordoba/pedidos/" target="_blank" >http://wonderhamburgueseria.com.ar/nuevacordoba/pedidos/1pedidos/2pedidos/3pedidos/4pedidos/</a>
-                                </p>
-                                <p>Sistema de gestión y registro de venta, impresión de comanda dinámica</p>
-                            </span>
-
-                            <p class="date-text">Creado y mantenido desde <span class="date">2020-08-05</span></p>
-                            
-                            <b>PHP, Jquery, Bootstrap, MySql</b>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+    <div class="row" id="portfolio">
+        <span class="text-span-colored-green-1" style="font-size: 50px">Portfolio</span>
+    </div>
+    <div class="row" id="portfolio-spinner">
+        <div  class="spinner" style="margin: auto;"></div>
     </div>
 
 
+
     <!-- Para Contact -->
-    <div class="row">
+    <div class="row"  style="background-image: url('https://uploads-ssl.webflow.com/600739a0619d0ec723fc4bbc/601307553856b3255792c584_request_demo-left.svg');">
     
         <div class="col-12 col-md-8 pageContainer"  id="contact"> 
             <div class="mailContainer">
@@ -146,8 +146,5 @@
     </div>
   </div>
 
- 
- 
-     <!--  <script src="js/bootstrap.min.js"></script>             -->
 </body>
 </html>

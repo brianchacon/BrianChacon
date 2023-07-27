@@ -1,4 +1,5 @@
-const jsonData= require('../Files/proyects.json');
+//const jsonData= require('../Files/proyects.json');
+
 /* window.onscroll = function() {
 
   var home      = document.getElementById('home');
@@ -62,6 +63,12 @@ const jsonData= require('../Files/proyects.json');
 var proyectList = [];
 
 function loadProyects(){
-  
-  console.log(jsonData);
+  //const jsonData= require('https://ideaschacon.com/ich/proyects.json');
+
+  fetch("https://ideaschacon.com/ich/proyects.json")
+  .then(response => {
+     return response.json();
+  })
+  .then(jsondata => console.log(jsondata));
+  //console.log(jsonData);
 }
