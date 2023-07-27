@@ -1,5 +1,5 @@
 //const jsonData= require('../Files/proyects.json');
-
+var language = 'en';
 
 menuIdSelected = 'homeMenuBarLink';
 
@@ -7,7 +7,7 @@ var proyectList = [];
 
 function loadProyects(){
   
-  const dire = 'https://ideaschacon.com/ich/proyects/getAll.php';
+  const dire = 'https://ideaschacon.com/ich/projects/getAll.php?lan='+language;
   
   fetch(dire)
   .then(response => {
