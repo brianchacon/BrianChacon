@@ -16,7 +16,8 @@ function loadProyects(){
   .then(jsondata => {
     proyectList = jsondata;
     proyectList.forEach(proyect => {
-      interpolation(proyect)
+      //interpolation(proyect);
+      createHtmlElement(proyect);
     });
     document.getElementById('portfolio-spinner').innerHTML ="";
   });
@@ -161,7 +162,7 @@ function selectMenuOption(id,className){
 }
 
 function detectEdges(){
-  menuIdSelected = 'homeMenuBarLink';
+/*  menuIdSelected = 'homeMenuBarLink';
   let elemId = '';
   
   let elems = ['home','about','portfolio','contact'];
@@ -178,5 +179,66 @@ function detectEdges(){
  // document.getElementById('seeData').innerHTML = 'scroll:'+scrollY+'| name:'+elemId;
 
 
-  selectMenuOption(elemId+'MenuBarLink','btn-menu');
+  selectMenuOption(elemId+'MenuBarLink','btn-menu');*/
+}
+
+
+//----------------------
+
+function createHtmlElement(proyect){
+  const id = proyect.id;
+  const name = proyect.name;
+  const company = proyect.company;
+  const techs = proyect.techs;
+  const description = proyect.description;
+  const dateData = proyect.dateData;
+  const imgUrls = proyect.imgUrls;
+  const link = proyect.link == '#nogo'?'':proyect.link;
+  let buttons = "";
+  let count = 0;
+  imgUrls.forEach( url =>{
+    let shortUrl = getMinUrl(url,'_min');
+    let fullUrl = url;
+    count++;
+    buttons += '<button class="portfolio-item-card-list-option" onclick="setImage('+id+',\''+shortUrl+'\',\''+fullUrl+'\','+count+','+imgUrls.length+')" id="btnItem'+id+'_'+count+'">'+count+'</button>';
+  });
+  const imgMin = imgUrls.length >0 ?  getMinUrl(imgUrls[0],'_min') : '';
+  const fullUrl = imgUrls.length >0 ?  imgUrls[0] : '';
+
+  let element = '<div class="data-card">'+
+                '  <div class="data-card-header">'+
+                '    <div class="data-card-header-foto">'+
+                '      <img src="https://brianchacon.github.io/BrianChacon/Files/photo.png" >            '+
+                '    </div>'+
+                '    <div class="data-card-header-title">'+
+                '      <div class="tag-title"> '+techs+' </div>'+
+                '      <h3>  '+company+' </h3>'+
+                '    </div>'+
+                '    <div class="data-card-header-date">'+
+                '      <div class="data-card-header-date-tag">'+
+                        dateData +
+                '      </div>'+
+                '    </div>'+
+                '  </div>'+
+                '  <div class="data-card-body">'+
+                '    <h3>'+name+'</h3>'+
+                '    <a href="'+link+'">'+link+'</a>'+
+                '    <p>'+description+'</p>'+
+                '      <span class="portfolio-item-card-preview">'+
+                '          <span class="portfolio-item-card-img-container" onclick="showFullImage(true,'+id+');">'+
+                '              <img src="'+imgMin+'" alt="" class="imgPreviewClass"  id="imgPreview'+id+'">'+
+                '              <input value="'+fullUrl+'" type="hidden" id="imgInput'+id+'">'+
+                '          </span>'+
+                '          <span class="portfolio-item-card-img-selector">'+
+                '              <span class="portfolio-item-card-list">'+
+                       buttons+
+                '              </span>'+
+                '          </span>'+
+                '      </span>'+
+                '  </div>'+
+                '</div>';
+  
+   document.getElementById('feed-section').innerHTML = document.getElementById('feed-section').innerHTML + element;
+
+  document.getElementById('btnItem'+id+'_1').classList = ['portfolio-item-card-list-option active'];             
 }

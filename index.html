@@ -1,25 +1,417 @@
-
-<!DOCTYPE html>
-<html class="sr" lang="en" prefix="og: http://ogp.me/ns#" data-react-helmet="lang,prefix">
-<head>
+<html class="sr" prefix="og: http://ogp.me/ns#" data-react-helmet="lang,prefix" lang="en"><head>
     <title>Brian Chacon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
-	<meta property="og:title" content="Brian Chacon" />
-	<meta property="og:type" content="website portfolio" />
-<!-- 	<meta property="og:image" content="https://frontendlabs.io/frontend-labs-facebook.png" />
-	<meta property="og:url" content="https://frontendlabs.io/" /> -->
-	<link rel="shortcut icon" href="Files/icon.png">
+    <meta property="og:title" content="Brian Chacon">
+    <meta property="og:type" content="website portfolio">
+
+    <link rel="shortcut icon" href="https://brianchacon.github.io/BrianChacon/Files/icon.png">
 
     <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
-  
+
     <script src="js/scripts.js"></script>
 
+    <style>
+        body{background:#211f24}
+        img{border-radius: 5px;}
+        .language-menu{display:flex;width:100%;padding:5px;margin: 2em;}
+            .language-item{color:#fefefe;padding:5px}
+            .language-item-selected{color:#33fe33 !important;}
+        .profile-card{ 
+			background: #1d1d20;
+		    padding: 5px;
+		    border: 2px solid #3a994c57;
+		    border-radius: 8px;
+		    display: flex;
+		    flex-direction: column;
+		    margin: 2em;
+		    box-shadow: 2px 2px 5px #010c03d4;
+        }
+            .profile-section-top{
+            	background: #202225;
+            	min-height: 250px;
+			    background-image: url('https://uploads-ssl.webflow.com/600739a0619d0ec723fc4bbc/601307553856b3255792c584_request_demo-left.svg');
+			    filter: hue-rotate(279deg);
+            } 
+            .profile-section-bottom{display:flex;border-top:4px solid #3a994c;flex-wrap: wrap;} 
+
+                .profile-img-content{width:30%;margin-bottom: -13%;}
+                .profile-img-content img{    
+                	top: -45%;
+				    width: 70%;
+				    margin-left: 30%;
+				    border: 4px solid #37a640;
+				    border-radius: 5px 30px 30px 5px;
+				    box-shadow: 1px 1px 9px 2px #041a36;
+				}
+                .profile-titles{    
+                	width: 64%;
+				    padding: 2px 30px;
+				}
+                    .profile-titles h1{width:100%;color: #f6f6ff;margin-bottom: 2%;}
+                    .profile-titles h2{width:100%;color: #4af557a6;}
+                    .profile-titles h3{width:100%;color: #d6d6ff;margin-top: 4%;}
+                .profile-description{
+                	width: 100%;
+				    padding: 2em 10%;
+				    font-size: 18px;
+				}
+				.profile-description p{
+					text-align: center;
+				    color:#767474
+				}
+				.profile-techs{width: 100%;margin-bottom: 2em;}
+					.profile-techs p{
+						text-align: center;
+					    color: #1d548e;
+					    width: 100%;
+					    font-size: 20px;
+					} 
+                .profile-description-list{
+               	    width: 100%;
+				    color: #3333fe;
+				    display: flex;
+				    justify-content: space-evenly;
+				    padding: 3% 0;
+				}
+                    .profile-description-list-elem{
+                    	padding: 4px;
+					    margin-right: 3px;
+					    display: flex;
+					    align-items: center;
+					}
+                    .profile-description-list-elem svg{
+                    	height: 3em;
+    					fill: #bf372b;
+                    }
+                    .profile-description-list-elem span{
+                    	font-size: 1.5em;
+    					margin-left: 0.4em;
+    					color: #bebebe;
+    				}
+    	.tab-section-menu{display: flex;justify-content: center;margin: 60px 0 15px 0;}
+        	.tab-section-item{
+        		font-size: 2.5em;
+    			margin-left: 1em;
+    			color: #bebebe;
+    			border-bottom: 2px solid #3330;
+        	}
+        	.tab-section-item:hover{cursor: pointer;opacity: 0.5}
+        	.tab-section-item-selected{border-bottom: 2px solid #2e713b;}
+
+        	.feed{display: flex;flex-direction: column;    padding-bottom: 15em;}
+			.data-card{
+				background: #1d1d20;
+			    border: 2px solid #272729;
+			    border-radius: 8px;
+			    display: flex;
+			    flex-direction: column;
+			    margin: 1em;
+			    padding: 4em 2em;
+			    box-shadow: 2px 2px 5px #010c03d4;
+			}
+				.data-card-header{display: flex;}
+					.data-card-header-foto{
+					    display: flex;
+					    justify-content: flex-end;
+					    margin-right: 5px;
+					}
+						.data-card-header-foto img{
+						    border: 4px solid #37a640;
+						    box-shadow: 1px 1px 9px 2px #041a36;
+						    height: 50px;
+						    border-radius: 8px;
+						}
+					.data-card-header-title{width: 80%}
+						.tag-title{
+							background: #0e0e0e;
+						    color: #548a55;
+						    border-radius: 8px;
+						    padding: 5px 12px;
+						    width: fit-content;
+						}
+						.data-card-header-title h3{color: #dfb844;   padding: 5px 12px;}
+						.data-card-header-title a{color: #1d548e;}
+					.data-card-header-date{}
+					.data-card-header-date-tag{
+						width: 10%;
+						background: #23282d; 						
+						border-radius: 5px;
+						color: #4caf50;
+					    padding: 5px 12px;
+					    width: fit-content;
+					}
+				.data-card-body{
+					padding: 0 4em;
+				    text-align: center;
+				    margin: auto;
+				    display: flex;
+    				flex-direction: column;
+    				align-items: center;
+				}	
+
+					.data-card-body h3{color: #ececec;font-size: 50px;}
+					.data-card-body a{color: #1d548e;font-size: 1.2em;}
+					.data-card-body p{color: #767474;font-size: 18px;}
+
+
+					.mailButton:hover {
+					    background-color: #1c2026;
+					    cursor: pointer;
+					}
+					.mailButton {
+					    background-color: #242327;
+    					border: 1px solid #171719;
+					}
+					.mailButton a{
+						color:#009688;
+					}
+
+					@media (max-width: 768px) {
+						.profile-card {
+							margin: 5px;
+						}
+						.profile-img-content {
+						    width: 100%;
+						}
+						.profile-img-content img {
+						    top: -51%;
+						    width: 50%;
+						    margin-left: 13%;
+						}
+
+						.profile-titles {
+							width: 100%;
+							padding: 2px 10px;
+						}
+						.profile-titles h2 {
+						    font-size: 1.5rem;
+						    text-align: center;
+						}
+
+						.profile-description-list-elem span {
+    						margin-left: 1.3em;
+    					}
+
+						.profile-description-list {
+						    flex-wrap: wrap;
+						    flex-direction: column;
+						}
+						.correo-perfil{
+							font-size: 15px !important;
+						}
+						.tab-section-item {
+	    					font-size: 1em;
+	    				}
+	    				.data-card {
+	    					margin: 5px;
+    						padding: 1em 2px;
+	    				}
+	    				.data-card-header {
+						    flex-wrap: wrap;
+						}
+							.data-card-header-foto {
+							    width: 20%;
+							}
+							.data-card-header-title {
+	    						width: 78%;
+	    					}
+	    					.tag-title{font-size: 10px;}
+							.data-card-header-date-tag {
+							    font-size: 10px;
+							    border-radius: 0 5px 5px 0;
+							}
+							.data-card-body {
+							    padding: 0px 0px;
+							}
+
+							.data-card-header-title h3 {font-size: 15px; }
+		    				.data-card-body h3 { font-size: 30px; }
+		    				.data-card-body a { 
+		    					font-size: 12px; 
+		    					white-space: nowrap;
+								overflow: hidden;
+								text-overflow: ellipsis;
+								width: 300px;
+		    				}
+					}
+
+
+    </style>
+    <script type="text/javascript">
+    	function changeSection(optionId){
+    		document.getElementById("feed-section").style = optionId == "feed-section"? "display:flex" : "display: none;";
+    		document.getElementById("contact-section").style = optionId == "contact-section"? "display:flex" : "display: none;";
+    		document.getElementById("about-section").style = optionId == "about-section"? "display:flex" : "display: none;";
+
+    		 document.getElementById("feed-section-tag").style = optionId == "feed-section"? "border-bottom: 2px solid #2e713b;" : "";
+    		document.getElementById("contact-section-tag").style = optionId == "contact-section"? "border-bottom: 2px solid #2e713b;" : "";
+    		document.getElementById("about-section-tag").style = optionId == "about-section"? "border-bottom: 2px solid #2e713b;" : "";
+    	}
+    	
+    </script>
 </head>
-<body onload="loadProyects()" onscroll="detectEdges()">
+<body onload="changeSection('feed-section');loadProyects()" onscroll="detectEdges()">
+
+   		
+
+    <div class="language-menu">
+        <div class="language-item language-item-selected">Español</div>
+        <div class="language-item">English</div>
+    </div>
+    <div class="profile-card">
+        <div class="profile-section-top"></div>
+        <div class="profile-section-bottom">
+            <div class="profile-img-content">
+                <img src="https://brianchacon.github.io/BrianChacon/Files/photo.png" alt="Brian chacon image profile" loading="lazy">
+            </div>
+            <div class="profile-titles">
+               <h3>Full-stack developer </h3>
+               <h1 class="text-span-colored-green-2">Brian A. Chacón</h1>
+               <h2>Always building stuffs 🏗⚡🚀🔺  🏗</h2>
+            </div>     
+
+            <div class="profile-description">
+                <p>I love creating technological solutions, that live on the web.</p>
+
+                 <p>I work mainly with Java and PHP for the backend and Angular for a full
+                    development or just JS/jQuery for web funcionalities.</p>
+            </div>
+            <div class="profile-techs">            	
+            	<p>Java, Spring-Boot, PHP, Laravel, MySQL, JS, Angular, React, JQuery, CSS, GIT</p>
+            </div>
+   
+        </div>
+        <div class="profile-section-bottom" style="border-color:#acacac">
+        	<div class="profile-description-list">
+                <div class="profile-description-list-elem">
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"> <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+                    <span  style="color: #70a7d8;">Ar</span>
+                    <span  style="color: #f7f7f7;margin-left: 0;">ge</span>
+                    <span  style="color: #ffe500;margin-left: 0;">n</span>
+                    <span  style="color: #f7f7f7;margin-left: 0;">ti</span>
+                    <span  style="color: #70a7d8;margin-left: 0;">na</span>
+                </div>
+                <a class="profile-description-list-elem">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"> <path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/></svg>
+                    <span class="correo-perfil">brian89.chacon89@gmail.com</span>
+                </a>
+                <a class="profile-description-list-elem" href="https://www.linkedin.com/in/brian-chacon-6a209543/">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="fill: #036396;"> <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                    <span></span>
+                </a>
+                <a class="profile-description-list-elem">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" style="fill: #232323;"> <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="tab-section-menu">
+    	<div class="tab-section-item" id="feed-section-tag"    onclick="changeSection('feed-section')">Proyectos</div>
+    	<div class="tab-section-item" id="contact-section-tag" onclick="changeSection('contact-section')">Contacto</div>
+    	<div class="tab-section-item" id="about-section-tag"   onclick="changeSection('about-section')">Sobre</div>
+    </div>
+
+
+    <!-- feed -->
+    <div class="feed" id="feed-section">
+    	<div class="data-card">
+    		<div class="data-card-header">
+    			<div class="data-card-header-foto">
+    				<img src="https://brianchacon.github.io/BrianChacon/Files/photo.png" >    				
+    			</div>
+    			<div class="data-card-header-title">
+    				<div class="tag-title"> Tecnologías </div>
+    				<h3> Cliente </h3>
+    			</div>
+    			<div class="data-card-header-date">
+    				<div class="data-card-header-date-tag">
+    					Fechas
+    				</div>
+    			</div>
+    		</div>
+    		<div class="data-card-body">
+    			<h3>Proyectos</h3>
+    			<a href="https://klommerce.com.ar/">Ideas Chacon Web</a>
+    			<p> 
+    				Lista de proyectos realizados más relevantes.
+				</p>
+				<div class="arrow-body">
+					<div class="center-con">
+						<div class="round">
+							<div id="cta">
+								<span class="arrow primera next"></span>
+								<span class="arrow segunda next"></span>	
+							</div>
+						</div>
+					</div>
+				</div>
+    		</div>
+    	</div>
+    </div>
+
+    <!-- contact -->
+    <div class="feed" id="contact-section">
+    	<div class="data-card">
+    		<div class="data-card-body">
+    			
+    			<h3 style="font-size:15px;width: 100%;color: #d6d6ff;margin-top: 4%;">brian89.chacon89@gmail.com</h3>
+    			
+    			<h3>Contacto</h3>
+    			<p>
+    				Do you need to build something, want to work together or just to say hi, send me a e-mail pushing the button below
+				</p>
+			    <button class="mailButton">
+                   <a href="mailto:brian89.chacon89@gmail.com?Subject=Mail%20De%20Mi%20Web%20FEEDBACK" class="mailLink">WRITE ME</a>
+                </button>
+    		</div>
+    	</div>
+    </div>
+
+    <!-- about -->
+    <div class="feed" id="about-section">
+    	<div class="data-card">
+    		<div class="data-card-body">
+                    <h3 class="text-span-colored-green-2" style="font-size: 50px">About me</h3>
+                    <p>I love creating technological solutions, that live on the web.
+						I work mainly with Java and PHP for the backend and Angular 
+						for a full development or just JS/jQuery for web funcionalities.</p>
+                    <p class="p2">I love creating technological solutions, that live on the  web. </p>
+                    <p class="p2"></p>
+
+                    <p class="p2">I work mainly with Java and PHP for the backend and Angular for a full development or just JS/jQuery for web funcionalities.</p>
+                     <p class="p2">This is a list of the technologies I usually work with:</p>
+                    <p class="p2"><b>Java +</b> <b>PHP +</b> C/C++  Haskell Python MySql </p>
+                    <p class="p2"><b>Angular +</b>  React  JS jQuery HTML/CSS</p>
+                    <!--p class ="p2">off course: GIT & bitbucket SCRUM </p-->
+                    <br>
+                    <br>
+                    <p class="p2">Need build something ? Send me a email.</p>
+                    <div>
+                    	<img src="">
+                    	<a href="">Dot-comma</a> 
+                    </div>                    
+                    <div>
+                    	<img src="">
+                    	<a href="">Ideas-chacon</a> 
+                    </div>
+                    <div>
+                    	<img src="">
+                    	<a href="">Klommerce</a> 
+                    </div>
+
+                    <button class="mailButton">
+                       <a href="mailto:brian89.chacon89@gmail.com?Subject=Mail%20De%20Mi%20Web%20FEEDBACK" class="mailLink">WRITE ME</a>
+                    </button>
+    		</div>
+    	</div>
+    </div>
 
     <div class="menu-bar">
         <div class="row" style="padding-top: 5px;">
@@ -38,113 +430,15 @@
             <div class="col-12 col-md-2 btn-menu"></div>
         </div>
     </div>
-  <div class="modal-image-view" onclick="showFullImage(false,0);" id="modal-image-view-id">
-    <div class="img-container">    
-       <img src=""  class="modal-img" style="" id="modal-image-full">
-    </div>
-  </div>
-  <div class="container" >
-    <!-- Para landing -->
-    <div class="row">
-        <div class="col-12 col-md-5" id="photoMobile">
-            <div class="rightSpace">
-
-                <img src="Files/logo1.png" alt="Brian Chacon Java Developer Logo" class="logoRight" style="opacity: 89%;width: 100vw;margin-left: -6%;filter: drop-shadow( 0px 32px 16px #095219e6);"> 
-            </div>
-        </div>
-        <div class="col-12 col-md-7 pageContainer" id="home"> 
-            <div class="leftSpace" >
-                <h1 style="color: #3d31f7;">Hi, I'm </h1>
-                <h1 >
-                    <span class="text-span-colored-green-1">Brian Chacón,</span>
-                </h1>
-                <h1>
-                    <span class="text-span-colored-green-2"> a WEB DEVELOPER.</span>
-                </h1>
-                <b>Fullstack developer.</b>
-            </div>
-
-
-        </div>
-        <div class="col-12 col-md-5" id="photoReg">
-            <div class="rightSpace">
-                <div class="brackets-img" style="font-size: 18em;
-    font-family: monospace;
-    color: #48465d;
-    background-image: -webkit-gradient(linear, left top, right top, color-stop(58%, #3d31f7), to(#10dd3c));
-    background-image: linear-gradient(76deg, #3d31f7 -20%, #10dd3c);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;">
-                    {}
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- Para aboutMe -->
-    <div class="row">
-        
-        <div class="col-12 col-md-8 pageContainer"  id="about" >
-            <div class="leftSpace" >
-                <div class="about" > 
-                    <span class="text-span-colored-green-1" style="font-size: 50px">About me</span>
-                    <p class ="p2">I love creating technological solutions, that live on the  web. </p>
-                    <p class ="p2"></p>
-    
-                    <p class ="p2">I work mainly with Java and PHP for the backend and Angular for a full development or just JS/jQuery for web funcionalities.</p>
-                     <p class ="p2">This is a list of the technologies I usually work with:</p>
-                    <p class ="p2"><b>Java +</b> <b>PHP +</b> C/C++  Haskell Python MySql </p>
-                    <p class ="p2"><b>Angular +</b>  React  JS jQuery HTML/CSS</p>
-                    <!--p class ="p2">off course: GIT & bitbucket SCRUM </p-->
-                    <br>
-                    <br>
-                    <p class ="p2">Need build something ? Send me a email.</p>
-                    <div class="mailButton">
-                       <a href="mailto:brian89.chacon89@gmail.com?Subject=Mail%20De%20Mi%20Web%20FEEDBACK" class="mailButton mailLink">WRITE ME</a>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-        <div class="col-12 col-md-4">
-            <div class="rightSpace" id="leftSpacePhoto">
-                <div class="borderPhoto" >
-                    <img src="Files/photo.png" alt="Contact Image" class="photo" loading="lazy">
-                </div>                
-            </div>
-        </div>
-    </div>
-
-    <!-- Para la lista de proyectos -->
-    <div class="row" id="portfolio">
-        <span class="text-span-colored-green-1" style="font-size: 50px">Portfolio</span>
-    </div>
-    <div class="row" id="portfolio-spinner">
+  
+	<div class="modal-image-view" onclick="showFullImage(false,0);" id="modal-image-view-id" style="display: none;">
+	    <div class="img-container"> 
+	       <img src="" class="modal-img" style="" id="modal-image-full">
+	    </div>
+	</div>
+	
+	<div class="row" id="portfolio-spinner">
         <div  class="spinner" style="margin: auto;"></div>
     </div>
 
-
-
-    <!-- Para Contact -->
-    <div class="row"  style="background-image: url('https://uploads-ssl.webflow.com/600739a0619d0ec723fc4bbc/601307553856b3255792c584_request_demo-left.svg');">
-    
-        <div class="col-12 col-md-8 pageContainer"  id="contact"> 
-            <div class="mailContainer">
-                <span class="text-span-colored-blue" style="font-size: 50px">Contacto</span>
-                <p class ="p2" style="padding: 3%; background-color: #353535; border-radius: 5px;color: rgb(216, 216, 216);"> Do you need to build something, want to work together or just to say hi, send me a e-mail pushing the button  below</p>               
-                
-                    <div class="mailButton">
-                        <a href="mailto:brian89.chacon89@gmail.com?Subject=Mail%20De%20Mi%20Web%20FEEDBACK" class="mailLink">WRITE ME</a>
-                    </div> 
-                            
-            </div> 
-        </div>
-        <div class="col-12 col-md-4"></div>
-    </div>
-  </div>
-
-</body>
-</html>
+</body></html>
