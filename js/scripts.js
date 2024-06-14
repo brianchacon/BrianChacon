@@ -242,3 +242,20 @@ function createHtmlElement(proyect){
 
   document.getElementById('btnItem'+id+'_1').classList = ['portfolio-item-card-list-option active'];             
 }
+
+
+      function changeSection(optionId){
+        document.getElementById("feed-section").style = optionId == "feed-section"? "display:flex" : "display: none;";
+        document.getElementById("contact-section").style = optionId == "contact-section"? "display:flex" : "display: none;";
+        document.getElementById("about-section").style = optionId == "about-section"? "display:flex" : "display: none;";
+
+        document.getElementById("feed-section-tag").style = optionId == "feed-section"? "background-image: linear-gradient(87deg, #3d31f7 -20%, #10dd3c);" : "";
+        document.getElementById("contact-section-tag").style = optionId == "contact-section"? "background-image: linear-gradient(274deg, #3d31f7 -20%, #10dd3c);" : "";
+        document.getElementById("about-section-tag").style = optionId == "about-section"? "background-image: linear-gradient(87deg, #3d31f7 -20%, #10dd3c);" : "";
+
+      document.getElementById("feed-section-tag").classList.remove("section-selected");
+      document.getElementById("contact-section-tag").classList.remove("section-selected");
+      document.getElementById("about-section-tag").classList.remove("section-selected");
+
+      document.getElementById(optionId+"-tag").classList.add("section-selected");
+      }
