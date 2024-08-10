@@ -194,6 +194,7 @@ function createHtmlElement(proyect){
   const dateData = proyect.dateData;
   const imgUrls = proyect.imgUrls;
   const link = proyect.link == '#nogo'?'':proyect.link;
+  const video = proyect.video == "" ? "" : '<iframe width="560" height="315" src="'+proyect.video+' " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" class="youtube-iframe"></iframe>';
   let buttons = "";
   let count = 0;
   imgUrls.forEach( url =>{
@@ -204,6 +205,22 @@ function createHtmlElement(proyect){
   });
   const imgMin = imgUrls.length >0 ?  getMinUrl(imgUrls[0],'_min') : '';
   const fullUrl = imgUrls.length >0 ?  imgUrls[0] : '';
+  buttons = imgUrls.length >1 ? buttons : "";
+ let selectorSpan = imgUrls.length <1 ? '' : 
+                '      <span class="portfolio-item-card-preview">'+
+                '          <span class="portfolio-item-card-img-container" onclick="showFullImage(true,'+id+');">'+
+                '              <img src="'+imgMin+'" alt="" class="imgPreviewClass"  id="imgPreview'+id+'">'+
+                '              <input value="'+fullUrl+'" type="hidden" id="imgInput'+id+'">'+
+                '          </span>';
+
+  selectorSpan += imgUrls.length <= 1 ? '' : 
+                '          <span class="portfolio-item-card-img-selector">'+
+                '              <span class="portfolio-item-card-list">'+
+                       buttons+
+                '              </span>'+
+                '          </span>';
+
+  selectorSpan += imgUrls.length <1 ? '' :'      </span>';     
 
   let element = '<div class="data-card">'+
                 '  <div class="data-card-header">'+
@@ -222,25 +239,17 @@ function createHtmlElement(proyect){
                 '  </div>'+
                 '  <div class="data-card-body">'+
                 '    <h3>'+name+'</h3>'+
+                '    '+video+
                 '    <a href="'+link+'">'+link+'</a>'+
                 '    <p>'+description+'</p>'+
-                '      <span class="portfolio-item-card-preview">'+
-                '          <span class="portfolio-item-card-img-container" onclick="showFullImage(true,'+id+');">'+
-                '              <img src="'+imgMin+'" alt="" class="imgPreviewClass"  id="imgPreview'+id+'">'+
-                '              <input value="'+fullUrl+'" type="hidden" id="imgInput'+id+'">'+
-                '          </span>'+
-                '          <span class="portfolio-item-card-img-selector">'+
-                '              <span class="portfolio-item-card-list">'+
-                       buttons+
-                '              </span>'+
-                '          </span>'+
-                '      </span>'+
+                selectorSpan +
                 '  </div>'+
                 '</div>';
   
    document.getElementById('feed-section').innerHTML = document.getElementById('feed-section').innerHTML + element;
 
-  document.getElementById('btnItem'+id+'_1').classList = ['portfolio-item-card-list-option active'];             
+   if(document.getElementById('btnItem'+id+'_1'))
+    document.getElementById('btnItem'+id+'_1').classList = ['portfolio-item-card-list-option active'];             
 }
 
 
