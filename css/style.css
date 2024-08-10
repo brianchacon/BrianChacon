@@ -448,6 +448,8 @@ input[type=submit]:hover {
 
           .p2 b{ color:#eca708 }
 
+          .p2{    color: #c2c0c0;font-size: 18px;}
+
 
 
  /* ARROW */
@@ -729,7 +731,7 @@ filter: invert(0.6);
               }
               .data-card {
                 margin: 5px;
-                padding: 1em 2px;
+                padding: 1em 8px;
               }
               .data-card-header {
                 flex-wrap: wrap;
